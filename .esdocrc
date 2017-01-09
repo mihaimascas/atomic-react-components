@@ -1,0 +1,25 @@
+{
+  "title": "React Pattern Library",
+
+  "autoPrivate": true,
+  "unexportIdentifier": true,
+  "undocumentIdentifier": true,
+  "builtinExternal": true,
+  "index": "./README.md",
+  "package": "./package.json",
+  "coverage": true,
+  "includeSource": true,
+
+  "source": "./src",
+  "destination": "./dist/doc",
+  "test": {
+    "type": "mocha",
+    "source": "./src"
+  },
+  "manul": {
+    "installation": ["./README.md"]
+  },
+  "plugins": [
+    {"name": "esdoc-es7-plugin"}
+  ]
+}

@@ -1,0 +1,46 @@
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@function unicode($str){
+  @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"")
+}
+
+@mixin generate-font-icon($icons: $font-icons) {
+  @each $class, $content in $icons {
+    &.#{$class}:before {
+      content: unicode($content);
+    }
+  }
+}
+
+@mixin pull-left {
+  float: left !important;
+}
+@mixin pull-right {
+  float: right !important;
+}
+
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin text-hide() {
+  font: "0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}

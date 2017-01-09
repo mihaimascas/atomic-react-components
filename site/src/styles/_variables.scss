@@ -1,0 +1,73 @@
+$namespace: 'demo-' !default;
+
+// Media query
+$mq-breakpoints: (
+  XS: 250px,
+  S: 510px,
+  M: 750px,
+  L: 990px,
+  XL: 1230px,
+) !default;
+
+$mq-base-font-size: 16px !default !default;
+
+// Static breakpoint - it's either this and create a new stylesheet for IE 8 or we use the no media query stile I illustrate
+// $mq-static-breakpoint: desktop !default;
+
+// Set the media query library to responsive mode
+$mq-responsive: true !default;
+
+// Display breakpoints for testing only
+// $mq-show-breakpoints: (XS, S, M, L, XL) !default;
+
+// Spacing
+$spacer: 1rem;
+
+// Typography
+$font-family-base:        "Roboto", sans-serif !default;
+$font-family-bold:        $font-family-base !default;
+$font-family-heading:     $font-family-base !default;
+$font-family-icon:        $font-family-base !default;
+
+$font-size-root: 16px !default;
+$font-size-bp: (
+  XS: 14px,
+  S:  14px,
+  M:  14px,
+  L:  15px,
+  XL: $font-size-root
+) !default;
+
+$line-height-base: 1.5 !default;
+
+$font-size-base:    1rem !default;
+$font-size-small:   12px !default;
+$font-size-medium:  1.25rem !default;
+$font-size-large:   1.5rem !default;
+$font-size-xlarge:  2.26rem !default;
+
+$font-size-h1: 2.5rem !default;
+$font-size-h2: $font-size-xlarge !default;
+$font-size-h3: 1.75rem !default;
+$font-size-h4: $font-size-large !default;
+$font-size-h5: $font-size-medium !default;
+$font-size-h6: $font-size-base !default;
+
+$headings-margin-bottom: ($spacer / 2) !default;
+
+$font-line-height: 1.5 !default;
+
+// Colors
+$color-gray-darker:         lighten(#000, 15%) !default; //#262626
+$color-gray-dark:           lighten(#000, 33%) !default; //#555555
+$color-gray-medium:         lighten(#000, 50%) !default; //#808080
+$color-gray-light:          lighten(#000, 90%) !default; //#e5e5e5
+$color-gray-soft:           lighten(#000, 95%) !default; //#f2f2f2
+
+$color-primary:             #0054a6 !default;
+$color-secondary:           #444444 !default;
+
+// z-index map
+$z-index-map: (
+  sidebar: 1000
+);

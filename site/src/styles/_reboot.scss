@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+html {
+  @include XS() {
+    font-size: #{map-get($font-size-bp, XS)};
+  }
+
+  @include S() {
+    font-size: #{map-get($font-size-bp, S)};
+  }
+
+  @include M() {
+    font-size: #{map-get($font-size-bp, M)};
+  }
+
+  @include L() {
+    font-size: #{map-get($font-size-bp, L)};
+  }
+
+  @include XL() {
+    font-size: #{map-get($font-size-bp, XL)};
+  }
+}
+
+html, body {
+  max-height: 100%;
+  line-height: $line-height-base;
+}

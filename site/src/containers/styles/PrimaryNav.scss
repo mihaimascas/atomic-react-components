@@ -1,0 +1,58 @@
+@import "./../../styles/setup";
+
+.primary-nav {
+
+  $root: &;
+
+  &__list-item {
+    border-bottom: 1px solid lighten($color-gray-darker, 5%);
+
+    &:first-child {
+      border-top: 1px solid lighten($color-gray-darker, 5%);
+    }
+
+    &--title {
+      background-color: lighten($color-gray-darker, 5%);
+      color: $color-gray-medium;
+      font-size: $font-size-small;
+      margin-left: 0 - $spacer/2;
+      margin-right: 0 - $spacer/2;
+      padding: 0 $spacer;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: $spacer / 2;
+    font-weight: 300;
+
+    &,
+    &:link,
+    &:visited {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--active {
+      font-weight: 600;
+    }
+  }
+
+  &__link-label {
+    display: block;
+  }
+
+  &__link-icon {
+    display: inline-block;
+    line-height: $line-height-base;
+    transition: transform 100ms linear;
+
+    #{$root}__link--active > & {
+      transform: rotateY(180deg);
+    }
+  }
+}

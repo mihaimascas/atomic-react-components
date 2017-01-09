@@ -1,0 +1,59 @@
+.u {
+
+  @each $bp in map-keys($mq-breakpoints) {
+    @include mq($from: $bp) {
+      // Float helpers
+      &--pull-#{to_lower_case($bp)}-left {
+        @include pull-left();
+      }
+      &--pull-#{to_lower_case($bp)}-right {
+        @include pull-right();
+      }
+      &--pull-#{to_lower_case($bp)}-none {
+        float: none !important;
+      }
+
+      // Display helpers
+      &--hidden-#{to_lower_case($bp)}-up {
+        display: none !important;
+      }
+
+      // Text align helper classes
+      &--text-#{to_lower_case($bp)}-left {
+        text-align: left !important;
+      }
+      &--text-#{to_lower_case($bp)}-right  {
+        text-align: right !important;
+      }
+      &--text-#{to_lower_case($bp)}-center {
+        text-align: center !important;
+      }
+    }
+
+    @include mq($until: $bp) {
+      &--hidden-#{to_lower_case($bp)}-down {
+        display: none !important;
+      }
+    }
+  }
+
+  &--clearfix {
+    @include clearfix();
+  }
+
+  &--center-block {
+    @include center-block();
+  }
+
+  &--invisible {
+    visibility: hidden !important;
+  }
+
+  &--hidden {
+    display: none !important;
+  }
+
+  &--text-hide {
+    @include text-hide();
+  }
+}

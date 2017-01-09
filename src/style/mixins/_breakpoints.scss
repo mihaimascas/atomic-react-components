@@ -1,0 +1,83 @@
+@mixin XS() {
+  // The no query is a media query rule -> see XS as no media query case
+  //@include mq($until: S);
+  @content;
+}
+
+@mixin FromXS() {
+  @include mq($from: S) {
+    @content;
+  }
+}
+
+@mixin S() {
+  @include mq($from: S, $until: M) {
+    @content;
+  }
+}
+
+@mixin FromS() {
+  @include mq($from: S) {
+    @content;
+  }
+}
+
+@mixin UntilS() {
+  @include mq($until: S) {
+    @content;
+  }
+}
+
+@mixin M() {
+  @include mq($from: M, $until: L) {
+    @content;
+  }
+}
+
+@mixin FromM() {
+  @include mq($from: M) {
+    @content;
+  }
+}
+
+@mixin UntilM() {
+  @include mq($until: M) {
+    @content;
+  }
+}
+
+@mixin L() {
+  @include mq($from: L, $until: XL) {
+    @content;
+  }
+}
+
+@mixin FromL() {
+  @include mq($from: L) {
+    @content;
+  }
+}
+
+@mixin UntilL() {
+  @include mq($until: L) {
+    @content;
+  }
+}
+
+@mixin XL() {
+  @include mq($from: XL) {
+    @content;
+  }
+}
+
+@mixin FromXL() {
+  @include mq($from: XL) {
+    @content;
+  }
+}
+
+@mixin UntilXL() {
+  @include mq($until: XL) {
+    @content;
+  }
+}

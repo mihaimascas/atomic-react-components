@@ -1,0 +1,57 @@
+@import "../../../style/setup";
+
+@mixin create-grid-col-bp-modifier($cols, $bp) {
+  @if ($cols > 1) {
+    @for $i from 1 through $cols {
+      &--#{$i}-#{to_lower_case($bp)} {
+        width: (100% / $cols) * $i;
+      }
+    }
+  }
+}
+
+@mixin create-grid-cell($columns: $grid-columns) {
+  //Build XS - mobile first
+  @include XS() {
+    @include create-grid-col-bp-modifier($columns, "XS");
+  }
+
+  //Build S
+  @include FromS() {
+    @include create-grid-col-bp-modifier($columns, "S");
+  }
+
+  //Build M
+  @include FromM() {
+    @include create-grid-col-bp-modifier($columns, "M")
+  }
+
+  //Build L
+  @include FromL() {
+    @include create-grid-col-bp-modifier($columns, "L")
+  }
+
+  //Build XL
+  @include FromXL() {
+    @include create-grid-col-bp-modifier($columns, "XL")
+  }
+}
+
+.#{$namespace}cell {
+  position: relative;
+  display: inline-block;
+  padding: ($grid-vertical-spacing/2) ($grid-gutter/2);
+  box-sizing: border-box;
+  vertical-align: top;
+  font-size: 1rem;
+
+  @include create-grid-cell();
+
+  &--align-middle {
+    vertical-align: middle;
+  }
+
+  &--align-bottom {
+    vertical-align: bottom;
+  }
+}

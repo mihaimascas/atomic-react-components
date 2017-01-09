@@ -1,0 +1,61 @@
+@import "../../../style/setup";
+
+$button-font-weight: 400 !default;
+
+
+.#{$namespace}button {
+  display: block;
+  margin: 0; // For input.btn iOS
+  font-weight: $button-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  width: 100%;
+
+  @include FromS(){
+    display: inline-block;
+    width: auto;
+  }
+
+  &--size-large {
+    padding: $padding-vertical-large $padding-horizontal-large;
+    font-size: $font-size-large;
+    border-radius: $border-radius-large;
+  }
+
+  &--size-medium {
+    padding: $padding-vertical-normal $padding-horizontal-normal;
+    font-size: $font-size-base;
+    border-radius: $border-radius-normal;
+  }
+
+  &--size-small {
+    padding: $padding-vertical-small $padding-horizontal-small;
+    font-size: $font-size-small;
+    border-radius: $border-radius-small;
+  }
+
+  &--default {
+    background-color: $color-gray-dark;
+    color: #fff;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: #fff;
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: #fff;
+  }
+
+  &--tertiary {
+    background-color: transparent;
+    color: #fff;
+  }
+}

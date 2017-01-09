@@ -1,0 +1,29 @@
+@import "./../../styles/setup";
+
+.page {
+  $root: &;
+  &__wrapper {
+    margin: 0 1rem;
+  }
+
+  &__body {
+    box-sizing: border-box;
+    width: 100%;
+
+    transition: padding 150ms ease-in;
+
+    @include FromM() {
+      padding-left: 36%;
+    }
+    @include FromL() {
+      padding-left: 31%;
+    }
+    @include FromXL() {
+      padding-left: 26%;
+    }
+
+    &--full-width {
+      padding-left: 0 !important;
+    }
+  }
+}

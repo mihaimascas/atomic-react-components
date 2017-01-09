@@ -1,0 +1,26 @@
+@import "../../../style/setup";
+
+$collapse-min-width: 12rem !default;
+
+
+.#{$namespace}collapse {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  max-height: 0;
+  min-width: $collapse-min-width;
+  overflow: hidden;
+  z-index: 1;
+
+  transition: max-height 250ms ease-out;
+
+  &--in {
+    max-height: 80vh;
+  }
+
+  &--align-right {
+    left: auto;
+    right: 0;
+  }
+
+}

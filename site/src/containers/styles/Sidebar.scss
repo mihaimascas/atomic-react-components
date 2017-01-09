@@ -1,0 +1,76 @@
+@import "./../../styles/setup";
+.sidebar {
+  $root: &;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  z-index: map_get($z-index-map, sidebar);
+  background-color: $color-gray-darker;
+  color: $color-gray-soft;
+
+  transition: all 150ms ease-in;
+
+  &--collapsed {
+    transform: translateX(-100%) translateY(-100%);
+    border-radius: 100%;
+    height: 60vw;
+    overflow: hidden;
+  }
+
+  @include FromS() {
+    width: 60%;
+  }
+  @include FromM() {
+    width: 35%;
+  }
+  @include FromL() {
+    width: 30%;
+  }
+  @include FromXL() {
+    width: 25%;
+  }
+
+
+
+  &__wrapper {
+    padding: $spacer/2;
+  }
+
+  &__brand {
+    background: url("./../../resources/images/logo.svg") no-repeat 50% 0;
+    background-size: 5rem auto;
+    padding-top: 5rem;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+
+    h1 {
+      font-weight: 300;
+      font-size: $font-size-small;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: none;
+    }
+  }
+
+  &__toggle {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+
+    position: fixed;
+    left: 0;
+    line-height: 3rem;
+    font-size: $font-size-large;
+    text-align: center;
+    border-radius: 3rem;
+
+    #{$root}--collapsed & {
+      left: auto;
+      right: 2rem;
+    }
+  }
+}

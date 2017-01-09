@@ -1,0 +1,7 @@
+@import "../../../style/setup";
+
+.#{$namespace}button {
+  @if $theme == 'red' {
+    border-radius: 0;
+  }
+}
