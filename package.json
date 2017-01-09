@@ -36,8 +36,14 @@
     "mocha",
     "sinom"
   ],
-  "author": "Mihai Mascas",
+  "author": "Mihai Mascas <mihai.mascas@cardoplus.ro>",
   "homepage": "https://github.com/mihaimascas/atomic-react-components",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mihaimascas/atomic-react-components/blob/master/LICENSE"
+    }
+  ],
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "autoprefixer-core": "^6.0.1",
