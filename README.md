@@ -3,7 +3,16 @@ Applying patternlab.io design systems to React components.
 
 BEM css class naming convention.
 
-## Initial setup
+## How to use
+
+```
+npm install atomic-react-components --save-dev
+```
+
+GitHub repository: https://github.com/mihaimascas/atomic-react-components
+
+
+## Project setup
 
 ```
 $ npm install
